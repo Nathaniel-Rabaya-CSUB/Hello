@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://siyfo5byb75j"]
+[gd_scene load_steps=7 format=3 uid="uid://siyfo5byb75j"]
 
 [ext_resource type="Script" uid="uid://bpb3uifglf2o2" path="res://scenes/hello_page/hello.gd" id="1_nubo1"]
+[ext_resource type="Texture2D" uid="uid://bnyfmmsf8h0lf" path="res://assets/bg/hello_bg.png" id="2_a45bj"]
 [ext_resource type="Texture2D" uid="uid://cmoya445norwi" path="res://assets/buttons/hello_button.png" id="2_svssl"]
 [ext_resource type="Texture2D" uid="uid://de4esqruv34fm" path="res://assets/buttons/hello_button_clicked.png" id="3_pbtvg"]
 [ext_resource type="Texture2D" uid="uid://b2jyfcudvrlj2" path="res://assets/buttons/hello_button_hover.png" id="4_i5i5q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmwyc"]
+texture = ExtResource("2_a45bj")
+modulate_color = Color(0.533333, 0.533333, 0.533333, 1)
 
 [node name="hello_page" type="Control"]
 layout_mode = 3
@@ -13,6 +18,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nubo1")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1080, 720)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rmwyc")
 
 [node name="hello_button" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(360, 180)
